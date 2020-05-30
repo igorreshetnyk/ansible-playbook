@@ -1,0 +1,28 @@
+---
+
+- name: Test Connection
+  hosts: "{{ HOSTS }}"
+  tasks:
+    - ping:
+
+    - name: Create log file in master
+      shell: echo This server {{ inventory_hostname }} is runing, node name {{ ansible_nodename }} >> log.txt
+      delegate_to: 127.0.0.1 
+  
+    - name: Reboot hosts
+      shell: reboot now
+      async: 1
+      poll: 0
+      
+    - name:  timeout from reboot
+      wait_for:
+        host: "{{ inventory_hostname }}"
+        state: started
+        delay: 5
+        timeout: 40
+      delegate_to: 127.0.0.1    
+
+    - name: retest connection
+      ping:
+          
+    - debug: msg="{{ inventory_hostname }} is running"

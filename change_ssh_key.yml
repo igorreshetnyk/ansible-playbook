@@ -1,0 +1,14 @@
+---
+- name: Change ssh key
+  hosts: prod_servers
+  become: yes
+
+  tasks:
+
+  - name: Set authorized key taken from file
+    authorized_key:
+      user: "{{ ansible_ssh_user  }}"
+      state: present
+      key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
+
+  - debug: var=ansible_ssh_user  

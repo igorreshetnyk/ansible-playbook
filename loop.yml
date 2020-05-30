@@ -1,0 +1,27 @@
+---
+- name: Test Loop
+  hosts: {{ HOSTS }}
+  #become: yes
+
+  tasks:
+
+  - name: delete myFile.txt
+    file: name=myFile.txt state=absent   
+
+  - name: Show Name
+    debug: msg="Now is {{ item }}"
+    loop: 
+        - 'One'
+        - 'Two'
+        - 'Three'
+        - 'Four'
+  
+  - name: next Loop
+    shell: echo -n Z >> myFile.txt && cat myFile.txt
+    register: output
+
+
+  - name: Print outpoot
+    debug: 
+      var: output.stdout   
+

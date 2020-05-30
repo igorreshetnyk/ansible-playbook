@@ -1,0 +1,6 @@
+---
+
+- name: Test Connection
+  hosts: "{{ HOSTS }}"
+  tasks:
+    - ping:

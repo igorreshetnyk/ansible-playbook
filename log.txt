@@ -1,0 +1,12 @@
+This server host1 is runing, node name adimn-VirtualBox
+This server test is runing, node name adimn-VirtualBox
+This server host2 is runing, node name adimn-VirtualBox
+This server test is runing, node name adimn-VirtualBox
+This server host1 is runing, node name adimn-VirtualBox
+This server host2 is runing, node name adimn-VirtualBox
+This server test is runing, node name adimn-VirtualBox
+This server host1 is runing, node name adimn-VirtualBox
+This server host2 is runing, node name adimn-VirtualBox
+This server host1 is runing, node name adimn-VirtualBox
+This server host2 is runing, node name adimn-VirtualBox
+This server test is runing, node name adimn-VirtualBox
